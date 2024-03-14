@@ -1,8 +1,16 @@
 import Geolocation from '@react-native-community/geolocation';
 import React, {useState} from 'react';
-import {Alert, Button, Platform, SafeAreaView, StyleSheet, View} from 'react-native';
+import {
+  Alert,
+  Button,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  View,
+} from 'react-native';
 import {PERMISSIONS, requestMultiple} from 'react-native-permissions';
 import BackgroundService from 'react-native-background-actions';
+import notifee from '@notifee/react-native';
 Geolocation.setRNConfiguration({
   skipPermissionRequests: false,
   authorizationLevel: 'always',
@@ -12,6 +20,31 @@ Geolocation.setRNConfiguration({
 
 function App() {
   const [locationAccess, setLocationAccess] = useState(false);
+
+  async function onDisplayNotification() {
+    // Request permissions (required for iOS)
+    await notifee.requestPermission();
+
+    // Create a channel (required for Android)
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+    });
+
+    // Display a notification
+    await notifee.displayNotification({
+      title: 'Notification Title',
+      body: 'Main body content of the notification',
+      android: {
+        channelId,
+        smallIcon: 'ic_launcher', // optional, defaults to 'ic_launcher'.
+        // pressAction is needed if you want the notification to open the app when pressed
+        pressAction: {
+          id: 'default',
+        },
+      },
+    });
+  }
 
   const sleep = time =>
     new Promise(resolve => setTimeout(() => resolve(), time));
@@ -25,7 +58,7 @@ function App() {
     const {delay} = taskDataArguments;
     await new Promise(async resolve => {
       for (let i = 0; BackgroundService.isRunning(); i++) {
-        getUserLocation()
+        getUserLocation();
         await sleep(delay);
       }
     });
@@ -41,25 +74,20 @@ function App() {
     },
     color: '#ff00ff',
     parameters: {
-      delay: 1000 *5,
+      delay: 1000 * 5,
     },
   };
 
-
   const getUserLocation = () => {
-    
-  
-      Geolocation.getCurrentPosition(
-        position => {
-          console.log(position);
-          console.log("Here you can send it to any API");
-        },
-        error => {},
-        {enableHighAccuracy: false, timeout: 5000, maximumAge: 10000},
-      );
-    
-    
-  }
+    Geolocation.getCurrentPosition(
+      position => {
+        console.log(position);
+        console.log('Here you can send it to any API');
+      },
+      error => {},
+      {enableHighAccuracy: false, timeout: 5000, maximumAge: 10000},
+    );
+  };
   const requestLocationAccess = () => {
     if (Platform.OS == 'android') {
       requestMultiple([
@@ -91,6 +119,56 @@ function App() {
   const stopBgService = async () => {
     await BackgroundService.stop();
   };
+
+  const checkBatteryOptimizationTechniques = async () => {
+    const batteryOptimizationEnabled =
+      await notifee.isBatteryOptimizationEnabled();
+    if (batteryOptimizationEnabled) {
+      // 2. ask your users to disable the feature
+      Alert.alert(
+        'Restrictions Detected',
+        'To ensure notifications are delivered, please disable battery optimization for the app.',
+        [
+          // 3. launch intent to navigate the user to the appropriate screen
+          {
+            text: 'OK, open settings',
+            onPress: async () =>
+              await notifee.openBatteryOptimizationSettings(),
+          },
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+        ],
+        {cancelable: false},
+      );
+    }
+  };
+
+  const powerManagerInfo = async () => {
+    const powerManagerInfo = await notifee.getPowerManagerInfo();
+    if (powerManagerInfo.activity) {
+      // 2. ask your users to adjust their settings
+      Alert.alert(
+          'Restrictions Detected',
+          'To ensure notifications are delivered, please adjust your settings to prevent the app from being killed',
+          [
+            // 3. launch intent to navigate the user to the appropriate screen
+            {
+              text: 'OK, open settings',
+              onPress: async () => await notifee.openPowerManagerSettings(),
+            },
+            {
+              text: "Cancel",
+              onPress: () => console.log("Cancel Pressed"),
+              style: "cancel"
+            },
+          ],
+          { cancelable: false }
+        );
+    };
+  }
   return (
     <SafeAreaView
       style={{
@@ -110,6 +188,22 @@ function App() {
           onPress={() => requestLocationAccess()}
         />
       )}
+      <View style={{height: 30}} />
+      <Button
+        title="Display Notification"
+        onPress={() => onDisplayNotification()}
+      />
+      <View style={{height: 30}} />
+      <Button
+        title="Batttery OPtimization"
+        onPress={() => checkBatteryOptimizationTechniques()}
+      />
+      <View style={{height: 30}} />
+      
+     <Button
+        title="Power Manager Info"
+        onPress={() => powerManagerInfo()}
+      />
     </SafeAreaView>
   );
 }
