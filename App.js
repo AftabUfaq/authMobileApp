@@ -40,7 +40,6 @@ function App() {
       type: 'mipmap',
     },
     color: '#ff00ff',
-    linkingURI: 'yourSchemeHere://chat/jane', // See Deep Linking for more info
     parameters: {
       delay: 1000 *5,
     },
