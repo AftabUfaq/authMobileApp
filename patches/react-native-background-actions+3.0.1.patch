@@ -1,28 +1,46 @@
-diff --git a/node_modules/react-native-background-actions/android/build/.transforms/909df74f0d3e6fcf1f9845a7336b11a5/results.bin b/node_modules/react-native-background-actions/android/build/.transforms/909df74f0d3e6fcf1f9845a7336b11a5/results.bin
-new file mode 100644
-index 0000000..e3f0ff0
---- /dev/null
-+++ b/node_modules/react-native-background-actions/android/build/.transforms/909df74f0d3e6fcf1f9845a7336b11a5/results.bin
-@@ -0,0 +1 @@
-+i/classes_global-synthetics
-diff --git a/node_modules/react-native-background-actions/android/build/.transforms/be676bfe401ac5d4429bfe70df249e8b/results.bin b/node_modules/react-native-background-actions/android/build/.transforms/be676bfe401ac5d4429bfe70df249e8b/results.bin
-new file mode 100644
-index 0000000..61a58fa
---- /dev/null
-+++ b/node_modules/react-native-background-actions/android/build/.transforms/be676bfe401ac5d4429bfe70df249e8b/results.bin
-@@ -0,0 +1 @@
-+i/classes_dex
-diff --git a/node_modules/react-native-background-actions/android/build/.transforms/d075f7cd53c055871c99fafa6e6114ad/results.bin b/node_modules/react-native-background-actions/android/build/.transforms/d075f7cd53c055871c99fafa6e6114ad/results.bin
+diff --git a/node_modules/react-native-background-actions/android/build.gradle b/node_modules/react-native-background-actions/android/build.gradle
+index f7c92c8..0205263 100644
+--- a/node_modules/react-native-background-actions/android/build.gradle
++++ b/node_modules/react-native-background-actions/android/build.gradle
+@@ -5,11 +5,11 @@ def safeExtGet(prop, fallback) {
+ }
+ 
+ android {
+-    compileSdkVersion safeExtGet('compileSdkVersion', 31)
++    compileSdkVersion safeExtGet('compileSdkVersion', 34)
+ 
+     defaultConfig {
+         minSdkVersion safeExtGet('minSdkVersion', 16)
+-        targetSdkVersion safeExtGet('targetSdkVersion', 31)
++        targetSdkVersion safeExtGet('targetSdkVersion', 34)
+     }
+ }
+ 
+diff --git a/node_modules/react-native-background-actions/android/build/.transforms/0ac9c1b87748f866f7a36745b4f144ae/results.bin b/node_modules/react-native-background-actions/android/build/.transforms/0ac9c1b87748f866f7a36745b4f144ae/results.bin
 new file mode 100644
 index 0000000..0d259dd
 --- /dev/null
-+++ b/node_modules/react-native-background-actions/android/build/.transforms/d075f7cd53c055871c99fafa6e6114ad/results.bin
++++ b/node_modules/react-native-background-actions/android/build/.transforms/0ac9c1b87748f866f7a36745b4f144ae/results.bin
 @@ -0,0 +1 @@
 +o/classes
-diff --git a/node_modules/react-native-background-actions/android/build/.transforms/d075f7cd53c055871c99fafa6e6114ad/transformed/classes/classes_dex/classes.dex b/node_modules/react-native-background-actions/android/build/.transforms/d075f7cd53c055871c99fafa6e6114ad/transformed/classes/classes_dex/classes.dex
+diff --git a/node_modules/react-native-background-actions/android/build/.transforms/0ac9c1b87748f866f7a36745b4f144ae/transformed/classes/classes_dex/classes.dex b/node_modules/react-native-background-actions/android/build/.transforms/0ac9c1b87748f866f7a36745b4f144ae/transformed/classes/classes_dex/classes.dex
 new file mode 100644
-index 0000000..f99b1ac
-Binary files /dev/null and b/node_modules/react-native-background-actions/android/build/.transforms/d075f7cd53c055871c99fafa6e6114ad/transformed/classes/classes_dex/classes.dex differ
+index 0000000..5810b71
+Binary files /dev/null and b/node_modules/react-native-background-actions/android/build/.transforms/0ac9c1b87748f866f7a36745b4f144ae/transformed/classes/classes_dex/classes.dex differ
+diff --git a/node_modules/react-native-background-actions/android/build/.transforms/278c288c6406397232110038c155335b/results.bin b/node_modules/react-native-background-actions/android/build/.transforms/278c288c6406397232110038c155335b/results.bin
+new file mode 100644
+index 0000000..61a58fa
+--- /dev/null
++++ b/node_modules/react-native-background-actions/android/build/.transforms/278c288c6406397232110038c155335b/results.bin
+@@ -0,0 +1 @@
++i/classes_dex
+diff --git a/node_modules/react-native-background-actions/android/build/.transforms/55111c259adcc5a7f482544a1b691e77/results.bin b/node_modules/react-native-background-actions/android/build/.transforms/55111c259adcc5a7f482544a1b691e77/results.bin
+new file mode 100644
+index 0000000..e3f0ff0
+--- /dev/null
++++ b/node_modules/react-native-background-actions/android/build/.transforms/55111c259adcc5a7f482544a1b691e77/results.bin
+@@ -0,0 +1 @@
++i/classes_global-synthetics
 diff --git a/node_modules/react-native-background-actions/android/build/generated/source/buildConfig/debug/com/asterinet/react/bgactions/BuildConfig.java b/node_modules/react-native-background-actions/android/build/generated/source/buildConfig/debug/com/asterinet/react/bgactions/BuildConfig.java
 new file mode 100644
 index 0000000..9ff4817
@@ -105,7 +123,7 @@ index 0000000..9e26dfe
 \ No newline at end of file
 diff --git a/node_modules/react-native-background-actions/android/build/intermediates/compile_library_classes_jar/debug/classes.jar b/node_modules/react-native-background-actions/android/build/intermediates/compile_library_classes_jar/debug/classes.jar
 new file mode 100644
-index 0000000..2c0ec54
+index 0000000..89263a0
 Binary files /dev/null and b/node_modules/react-native-background-actions/android/build/intermediates/compile_library_classes_jar/debug/classes.jar differ
 diff --git a/node_modules/react-native-background-actions/android/build/intermediates/compile_r_class_jar/debug/R.jar b/node_modules/react-native-background-actions/android/build/intermediates/compile_r_class_jar/debug/R.jar
 new file mode 100644
@@ -116,11 +134,11 @@ new file mode 100644
 index 0000000..e69de29
 diff --git a/node_modules/react-native-background-actions/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties b/node_modules/react-native-background-actions/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
 new file mode 100644
-index 0000000..79a8ede
+index 0000000..3b9b925
 --- /dev/null
 +++ b/node_modules/react-native-background-actions/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
 @@ -0,0 +1 @@
-+#Thu Mar 14 11:51:48 PKT 2024
++#Thu Mar 14 14:59:44 PKT 2024
 diff --git a/node_modules/react-native-background-actions/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml b/node_modules/react-native-background-actions/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
 new file mode 100644
 index 0000000..ef2ea54
@@ -175,7 +193,7 @@ index 0000000..f121b77
 Binary files /dev/null and b/node_modules/react-native-background-actions/android/build/intermediates/javac/debug/classes/com/asterinet/react/bgactions/BuildConfig.class differ
 diff --git a/node_modules/react-native-background-actions/android/build/intermediates/javac/debug/classes/com/asterinet/react/bgactions/RNBackgroundActionsTask.class b/node_modules/react-native-background-actions/android/build/intermediates/javac/debug/classes/com/asterinet/react/bgactions/RNBackgroundActionsTask.class
 new file mode 100644
-index 0000000..beb92a1
+index 0000000..59e90ef
 Binary files /dev/null and b/node_modules/react-native-background-actions/android/build/intermediates/javac/debug/classes/com/asterinet/react/bgactions/RNBackgroundActionsTask.class differ
 diff --git a/node_modules/react-native-background-actions/android/build/intermediates/local_only_symbol_list/debug/R-def.txt b/node_modules/react-native-background-actions/android/build/intermediates/local_only_symbol_list/debug/R-def.txt
 new file mode 100644
@@ -239,7 +257,7 @@ index 0000000..0637a08
 \ No newline at end of file
 diff --git a/node_modules/react-native-background-actions/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar b/node_modules/react-native-background-actions/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar
 new file mode 100644
-index 0000000..c7aefd4
+index 0000000..4148ff7
 Binary files /dev/null and b/node_modules/react-native-background-actions/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar differ
 diff --git a/node_modules/react-native-background-actions/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt b/node_modules/react-native-background-actions/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
 new file mode 100644
@@ -281,24 +299,20 @@ index 0000000..0539ccc
 +		INJECTED from /Users/apple/repos/appAuthMobile/node_modules/react-native-background-actions/android/src/main/AndroidManifest.xml
 +	android:minSdkVersion
 +		INJECTED from /Users/apple/repos/appAuthMobile/node_modules/react-native-background-actions/android/src/main/AndroidManifest.xml
+diff --git a/node_modules/react-native-background-actions/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/BackgroundActionsModule.class.uniqueId0 b/node_modules/react-native-background-actions/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/BackgroundActionsModule.class.uniqueId0
+new file mode 100644
+index 0000000..4a9a83a
+Binary files /dev/null and b/node_modules/react-native-background-actions/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/BackgroundActionsModule.class.uniqueId0 differ
+diff --git a/node_modules/react-native-background-actions/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBackgroundActionsTask.class.uniqueId1 b/node_modules/react-native-background-actions/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBackgroundActionsTask.class.uniqueId1
+new file mode 100644
+index 0000000..beb92a1
+Binary files /dev/null and b/node_modules/react-native-background-actions/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBackgroundActionsTask.class.uniqueId1 differ
 diff --git a/node_modules/react-native-background-actions/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin b/node_modules/react-native-background-actions/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin
 new file mode 100644
-index 0000000..0e15e22
+index 0000000..76bd32a
 Binary files /dev/null and b/node_modules/react-native-background-actions/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin differ
-diff --git a/node_modules/react-native-background-actions/android/src/main/AndroidManifest.xml b/node_modules/react-native-background-actions/android/src/main/AndroidManifest.xml
-index b67ef4d..5e551c6 100644
---- a/node_modules/react-native-background-actions/android/src/main/AndroidManifest.xml
-+++ b/node_modules/react-native-background-actions/android/src/main/AndroidManifest.xml
-@@ -1,6 +1,6 @@
- <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.asterinet.react.bgactions">
-     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-     <application>
--        <service android:name=".RNBackgroundActionsTask"/>
-+         <service android:name=".RNBackgroundActionsTask" android:foregroundServiceType="shortService"/>
-     </application>
- </manifest>
 diff --git a/node_modules/react-native-background-actions/android/src/main/java/com/asterinet/react/bgactions/RNBackgroundActionsTask.java b/node_modules/react-native-background-actions/android/src/main/java/com/asterinet/react/bgactions/RNBackgroundActionsTask.java
-index 315dbd4..9900fc0 100644
+index 315dbd4..1f56574 100644
 --- a/node_modules/react-native-background-actions/android/src/main/java/com/asterinet/react/bgactions/RNBackgroundActionsTask.java
 +++ b/node_modules/react-native-background-actions/android/src/main/java/com/asterinet/react/bgactions/RNBackgroundActionsTask.java
 @@ -41,7 +41,9 @@ final public class RNBackgroundActionsTask extends HeadlessJsTaskService {
